@@ -3,22 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { AuthProvider } from '@asgardeo/auth-react';
-
-const config = {
-  signInRedirectURL: "http://localhost:3000",
-  signOutRedirectURL: "http://localhost:3000",
-  clientID: "_b1B8wxlOqfOfz5P1Wm69sPqwsMa",
-  baseUrl: "https://api.asgardeo.io/t/vams",
-  scope: [ "openid","profile" ]
-}
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider config={config}>
+    <BrowserRouter>
       <App />
-    </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
